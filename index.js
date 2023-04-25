@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 const PORT = process.env.PORT || 3030;
-app.listen(PORT, "192.169.1.198", () => {
+app.listen(PORT, () => {
   console.log(`Server Started at ${PORT}`);
 });
 require("dotenv").config();
