@@ -5,9 +5,7 @@ const app = express();
 
 app.use(express.json());
 const PORT = process.env.PORT || 3030;
-app.listen(PORT, () => {
-  console.log(`Server Started at ${PORT}`);
-});
+
 require("dotenv").config();
 
 const mongoString = process.env.DATABASE_URL;
@@ -22,3 +20,6 @@ database.once("connected", () => {
 });
 const routes = require("./routes/routes");
 app.use("/api", routes);
+app.listen(PORT, () => {
+  console.log(`Server Started at ${PORT}`);
+});
